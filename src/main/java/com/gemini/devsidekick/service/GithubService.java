@@ -1,7 +1,6 @@
 package com.gemini.devsidekick.service;
 
 import com.gemini.devsidekick.config.GithubConfigProperties;
-import com.gemini.devsidekick.model.RepoData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;

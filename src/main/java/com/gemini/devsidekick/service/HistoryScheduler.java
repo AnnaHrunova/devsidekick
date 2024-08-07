@@ -2,9 +2,7 @@ package com.gemini.devsidekick.service;
 
 import com.gemini.devsidekick.config.GithubConfigProperties;
 import com.gemini.devsidekick.config.ProjectConfigProperties;
-import com.gemini.devsidekick.model.RepoData;
 import lombok.AllArgsConstructor;
-import lombok.val;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -43,7 +41,7 @@ public class HistoryScheduler {
                 to = current;
                 var content = geminiService.getLiveSummary(from, to);
                 if (content.getRight() != null && !content.getRight().isEmpty()) {
-                    var item  = content.getRight().entrySet().iterator().next();
+                    var item = content.getRight().entrySet().iterator().next();
                     historyService.updateHistory(Pair.of(item.getKey(), item.getValue()));
                 }
             }

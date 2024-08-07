@@ -5,12 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class RepoData {
-
-    private String owner;
-    private String name;
-    private String accessToken;
-
+public class ProjectHistoryRequest {
     private LocalDate from;
     private LocalDate to;
 }

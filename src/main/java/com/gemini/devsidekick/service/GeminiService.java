@@ -3,8 +3,6 @@ package com.gemini.devsidekick.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gemini.devsidekick.config.GeminiConfigProperties;
-import com.gemini.devsidekick.controller.OperationsController;
-import com.gemini.devsidekick.model.RepoData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.tuple.Pair;

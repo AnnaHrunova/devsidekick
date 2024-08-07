@@ -3,7 +3,7 @@ package com.gemini.devsidekick.model;
 import lombok.Data;
 
 @Data
-public class DocData {
+public class BrDocumentData {
+    private String brDocUrl;
 
-    private String docUrl;
 }

@@ -2,10 +2,11 @@ package com.gemini.devsidekick.controller;
 
 import com.gemini.devsidekick.config.GeminiConfigProperties;
 import com.gemini.devsidekick.config.ProjectConfigProperties;
+import com.gemini.devsidekick.model.BrDocumentData;
+import com.gemini.devsidekick.model.ProjectHistoryRequest;
 import com.gemini.devsidekick.service.GeminiService;
 import com.gemini.devsidekick.service.GithubService;
 import com.gemini.devsidekick.service.HistoryService;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,7 @@ public class OperationsController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("projectName", projectProperties.getFormattedName());
+        model.addAttribute("projectName", "Project: " + projectProperties.getFormattedName());
 
         var historyRequest = new ProjectHistoryRequest();
         model.addAttribute("historyRequest", historyRequest);
@@ -64,14 +65,4 @@ public class OperationsController {
         return "compare";
     }
 
-    @Data
-    public static class ProjectHistoryRequest {
-        private LocalDate from;
-        private LocalDate to;
-    }
-
-    @Data
-    public static class BrDocumentData {
-        private String brDocUrl;
-    }
 }

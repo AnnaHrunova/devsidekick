@@ -3,14 +3,14 @@ spring:
     name: devsidekick
 
 gemini:
-  liveMode: true
+  liveMode: ${GEMINI_LIVE_MODE:false}
   apiKey: ${GEMINI_API_KEY}
 
 project:
-  formattedName: "Project: Coffee Shop"
-  brDocId: "1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og"
-  historyFrom: 07/25/2024
-  historyTo: 07/25/2024
+  formattedName: ${FORMATTED_PROJECT_NAME:Coffee Shop}
+  brDocId: ${BR_DOC_ID:1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og}
+  historyFrom: ${HISTORY_FROM:07/25/2024}
+  historyTo: ${HISTORY_TO:07/25/2024}
 
 github:
   repositoryName: ${GITHUB_REPO_NAME:coffeeshop}
