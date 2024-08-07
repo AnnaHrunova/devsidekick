@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: devsidekick
+
+gemini:
+  liveMode: true
+  apiKey: ${GEMINI_API_KEY}
+
+project:
+  formattedName: "Project: Coffee Shop"
+  brDocId: "1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og"
+  historyFrom: 07/25/2024
+  historyTo: 07/25/2024
+
+github:
+  repositoryName: ${GITHUB_REPO_NAME:coffeeshop}
+  repositoryOwner: ${GITHUB_REPO_OWNER:AnnaHrunova}
+  accessToken: ${GITHUB_ACCESS_TOKEN}
+

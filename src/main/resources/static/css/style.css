@@ -1,0 +1,279 @@
+/* Global Styles */
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    text-align: center;
+    font-family: monospace;
+}
+
+ul {
+    font-family: monospace;
+    list-style-type: none;
+    padding: 20px;
+    margin: 10px;
+}
+
+ul li {
+    font-family: monospace;
+    margin-top: 50px;
+}
+
+ul li a:hover {
+    color: #1abc9c;
+}
+
+main {
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin: 30px;
+}
+
+h1 {
+    font-family: monospace;
+    color: #d8bfd8;
+    text-shadow: 0 0 5px rgba(216, 191, 216, 0.8);
+    font-size: 30px;
+    margin-left: 30px;
+    transition: color 0.3s ease-in-out;
+}
+
+h3 {
+    font-family: monospace;
+    color: #d8bfd8;
+    font-size: 21px;
+    margin-left: 30px;
+    transition: color 0.3s ease-in-out;
+}
+
+.form-group {
+    font-family: monospace;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #00ffea;
+    text-shadow: 0 0 5px rgba(0, 255, 234, 0.8);
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+.form-control {
+    font-family: monospace;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px #1abc9c;
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+form {
+    height: 300px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.form-control {
+    font-family: monospace;
+    width: 100%;
+    padding: 30px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Enable word wrap */
+    white-space: pre-wrap; /* Preserve white space and line breaks */
+
+    height: 300px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+textarea:focus {
+    border-color: #00ffa3;
+    box-shadow: 0 0 25px #00ffa3, 0 0 30px #00ffa3 inset;
+}
+
+textarea::placeholder {
+    color: #00ffa3;
+    opacity: 0.8;
+}
+
+textarea::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #0d0d0d;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.5);}
+
+textarea::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00ff00, #00ffff);
+    border-radius: 10px;
+    border: 2px solid #0d0d0d;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #00ff00, #00aaff);
+}
+
+textarea::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(45deg, #00ff00, #0077ff);
+}
+
+.date-st {
+    font-family: monospace;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+
+.btn-submit {
+    font-family: monospace;
+    background-color: #1a1a1a;
+    color: #00ffea;
+    border: 2px solid #00ffea;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 0 15px #00ffea;
+    float: left;
+}
+
+.date-input {
+    font-family: monospace;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #00ffea;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 0 10px #00ffea;
+    transition: all 0.3s ease-in-out;
+}
+
+.date-input :hover,
+.date-input :focus {
+    border-color: #00ffa3;
+    box-shadow: 0 0 20px #00ffa3;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 234, 0.6), rgba(0, 255, 234, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.btn-submit:hover::before {
+    opacity: 1;
+}
+
+.btn-submit:active {
+    background-color: #00ffea;
+    color: #1a1a1a;
+    box-shadow: 0 0 20px #00ffea, inset 0 0 10px #1a1a1a;
+}
+
+.info {
+    font-family: monospace;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 18px;
+}
+
+a {
+  font-family: monospace;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+  color: #00d4ff;
+  letter-spacing: 0.5px;
+  margin: 30px;
+  margin-bottom: 50px;
+}
+
+.title {
+  color: #fff;
+  font-family: monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.title:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+}

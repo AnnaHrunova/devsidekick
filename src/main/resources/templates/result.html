@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dev Sidekick</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1 class="title">Dev Sidekick</h1>
+<h3>Project: Coffee Shop</h3>
+<div th:text="${message}"></div>
+
+<div>
+<ul>
+    <li th:each="entry: ${resDiff}">
+        <div class="form-control date-st" th:text="${entry.key}"></div>
+        <div>
+            <textarea readonly class="form-control" rows="10" th:utext="${#strings.replace(entry.value, '\n', '&#10;')}"></textarea>
+        </div>
+    </li>
+</ul>
+</div>
+
+<a href="/">Go Back</a>
+</body>
+</html>

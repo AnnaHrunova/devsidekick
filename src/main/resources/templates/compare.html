@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dev Sidekick</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1 class="title">Dev Sidekick</h1>
+<h3>Project: Coffee Shop</h3>
+<div style="margin: 30px">
+    <textarea class="form-control" rows="150" th:utext="${#strings.replace(message, '\n', '&#10;')}"></textarea>
+</div>
+<a href="/">Go Back</a>
+</body>
+</html>
