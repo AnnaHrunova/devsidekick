@@ -1,7 +1,6 @@
 package com.gemini.devsidekick.service;
 
-
-import com.gemini.devsidekick.config.ProjectConfigProperties;
+import com.gemini.devsidekick.config.GoogleDocConfigProperties;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -26,25 +25,31 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
 
+import static org.apache.commons.lang3.StringUtils.isBlank;
+
 @Service
 @AllArgsConstructor
-public class DocService {
-    private static final String APPLICATION_NAME = "Google Docs API";
+public class GoogleDocsService {
+
+    private final GoogleDocConfigProperties googleDocConfigProperties;
+    private final CommonUtilsService utilsService;
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-    private static final String TOKENS_DIRECTORY_PATH = "tokens";
-    private static final List<String> SCOPES =
-            Collections.singletonList(DocsScopes.DOCUMENTS_READONLY);
-    private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
-    private final ProjectConfigProperties projectProperties;
 
     @SneakyThrows
-    public String getDocumentContent() {
+    public String getDocumentContent(String brDocUrl) {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Docs service = new Docs.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName(APPLICATION_NAME)
+                .setApplicationName("Google Docs API")
                 .build();
-        Document response = service.documents().get(projectProperties.getBrDocId()).execute();
-        return readStructuralElements(response.getBody().getContent());
+        if (googleDocConfigProperties.isLiveMode()) {
+            if (isBlank(brDocUrl) ) {
+                brDocUrl = googleDocConfigProperties.getBrDocUrl();
+            }
+            var docId = brDocUrl.substring(brDocUrl.lastIndexOf("/") + 1);
+            Document response = service.documents().get(docId).execute();
+            return readStructuralElements(response.getBody().getContent());
+        }
+        return utilsService.readFromFile("business_requirements.txt");
     }
 
     private static String readStructuralElements(List<StructuralElement> elements) {
@@ -77,16 +82,17 @@ public class DocService {
 
     private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT)
             throws IOException {
-        InputStream in = DocService.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
+        var credentials = "/credentials.json";
+        InputStream in = GoogleDocsService.class.getResourceAsStream(credentials);
         if (in == null) {
-            throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
+            throw new FileNotFoundException("Resource not found: " + credentials);
         }
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
-                .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
+                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, Collections.singletonList(DocsScopes.DOCUMENTS_READONLY))
+                .setDataStoreFactory(new FileDataStoreFactory(new java.io.File("tokens")))
                 .setAccessType("offline")
                 .build();
         LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();

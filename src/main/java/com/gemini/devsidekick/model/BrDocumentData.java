@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class BrDocumentData {
-    private String brDocUrl;
 
+    private String brDocUrl;
 }

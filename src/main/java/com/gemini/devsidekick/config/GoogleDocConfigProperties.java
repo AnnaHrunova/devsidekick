@@ -5,11 +5,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "gemini")
+@ConfigurationProperties(prefix = "google-docs")
 @Data
-public class GeminiConfigProperties {
+public class GoogleDocConfigProperties {
 
     private boolean liveMode;
-    private String model;
-    private String apiKey;
+    private String brDocUrl;
 }

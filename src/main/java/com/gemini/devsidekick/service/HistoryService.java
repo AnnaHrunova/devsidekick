@@ -20,8 +20,6 @@ import java.util.Scanner;
 @AllArgsConstructor
 public class HistoryService {
 
-    private static final String DEFAULT_ERROR_MESSAGE = "Unexpected error occurred. Please, try later!";
-
     public Pair<String, Map<LocalDate, String>> getSavedSummary(LocalDate from, LocalDate to) {
         try {
             Map<LocalDate, String> res = new LinkedHashMap<>();
@@ -36,12 +34,10 @@ public class HistoryService {
                 }
                 current = current.minusDays(1);
             }
-//            res = res.entrySet().stream().sorted(Map.Entry.comparingByKey())
-//                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
             return Pair.of(null, res);
         } catch (Exception e) {
             log.error("Error while getting saved repo history:", e);
-            return Pair.of(DEFAULT_ERROR_MESSAGE, null);
+            return Pair.of(CommonUtilsService.DEFAULT_ERROR_MESSAGE, null);
         }
     }
 

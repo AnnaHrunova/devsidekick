@@ -1,6 +1,7 @@
 package com.gemini.devsidekick.controller;
 
 import com.gemini.devsidekick.config.GeminiConfigProperties;
+import com.gemini.devsidekick.config.GoogleDocConfigProperties;
 import com.gemini.devsidekick.config.ProjectConfigProperties;
 import com.gemini.devsidekick.model.BrDocumentData;
 import com.gemini.devsidekick.model.ProjectHistoryRequest;
@@ -26,6 +27,7 @@ public class OperationsController {
     private final GithubService githubService;
     private final HistoryService historyService;
     private final ProjectConfigProperties projectProperties;
+    private final GoogleDocConfigProperties docProperties;
     private final GeminiConfigProperties geminiProperties;
 
     @GetMapping("/")
@@ -36,7 +38,7 @@ public class OperationsController {
         model.addAttribute("historyRequest", historyRequest);
 
         var docData = new BrDocumentData();
-        docData.setBrDocUrl("https://docs.google.com/document/d/" + projectProperties.getBrDocId());
+        docData.setBrDocUrl(docProperties.getBrDocUrl());
         model.addAttribute("brDocData", docData);
         return "home";
     }
@@ -57,9 +59,9 @@ public class OperationsController {
     }
 
     @PostMapping("/compare")
-    public String compare(@ModelAttribute BrDocumentData brDocUrl, Model model) {
+    public String compare(@ModelAttribute BrDocumentData brDocumentData, Model model) {
         var initDate = githubService.getCommitInitDate();
-        var diff = geminiService.compareRepoAndBr(initDate, LocalDate.now());
+        var diff = geminiService.compareRepoAndBr(brDocumentData.getBrDocUrl(), initDate, LocalDate.now());
         model.addAttribute("message", diff);
 
         return "compare";

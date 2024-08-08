@@ -4,13 +4,17 @@ spring:
 
 gemini:
   liveMode: ${GEMINI_LIVE_MODE:false}
+  model: ${GEMINI_MODEL:gemini-1.5-pro-latest}
   apiKey: ${GEMINI_API_KEY}
+
+google-docs:
+  liveMode: ${GOOGLE_DOCS_LIVE_MODE:true}
+  brDocUrl: ${BR_DOC_URL:https://docs.google.com/document/d/1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og}
 
 project:
   formattedName: ${FORMATTED_PROJECT_NAME:Coffee Shop}
-  brDocId: ${BR_DOC_ID:1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og}
-  historyFrom: ${HISTORY_FROM:07/25/2024}
-  historyTo: ${HISTORY_TO:07/25/2024}
+  historyFrom: ${HISTORY_FROM:07/23/2024}
+  historyTo: ${HISTORY_TO:07/23/2024}
 
 github:
   repositoryName: ${GITHUB_REPO_NAME:coffeeshop}

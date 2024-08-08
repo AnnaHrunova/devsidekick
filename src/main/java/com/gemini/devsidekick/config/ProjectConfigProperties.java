@@ -13,7 +13,6 @@ import java.time.LocalDate;
 public class ProjectConfigProperties {
 
     private String formattedName;
-    private String brDocId;
 
     @DateTimeFormat(pattern = "MM/dd/yyyy")
     private LocalDate historyFrom;
