@@ -143,3 +143,8 @@ If Google Docs api is launched in live mode, credentials.json file and GOOGLE_DO
 8. **Compare code summary with Business Requirements:**
 
 ![Alt text](pictures/compare.png? "Compare")  
+
+## Additional resources
+
+1. Demo Github project: https://github.com/AnnaHrunova/coffeeshop
+2. Demo Business Requirements: https://docs.google.com/document/d/1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og/
