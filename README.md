@@ -10,10 +10,11 @@ At the current state of implementation later usage includes:
 &nbsp;&nbsp;&nbsp;&nbsp; 2. Project code summary comparison with Business Requirements document with the help of Gemini API;  
 #### Which problems are solved?
 1. Project manager can track the state of feature implementation on a high level without additional clarification with developers team;
-2. Missing features or any result of miscommunication can be detected automatically and as fast as possible;
-3. Developer can get enough context to start or pick up a task;
-4. New team member onboarding process may be simplified;
-5. Significantly reduces time spent to clarifications regarding reason/author/time of done/undone changes.
+2. Missing features or any result of miscommunication can be detected automatically and as fast as possible;  
+3. Developer can get enough context to start or pick up a task;  
+4. New team member onboarding process may be simplified;  
+5. Significantly reduces time spent to investigate changes with unclear commit messages;  
+6. Significantly reduces time spent to clarifications regarding reason/author/time of done/undone changes.  
 
 #### Future possible improvements/development
 1. Integrate with other Git systems (GitHub is used in MVP, but other Git systems like GitLab, Bitbucket, etc. may be integrated as well);  
