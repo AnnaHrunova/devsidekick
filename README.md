@@ -14,7 +14,9 @@ At the current state of implementation Dev Sidekick includes:
 3. Developer can get enough context to start or pick up a task;  
 4. New team member onboarding process may be simplified;  
 5. Significantly reduces time spent for investigating changes with unclear commit messages;  
-6. Significantly reduces time spent on clarifications regarding reason/author/time of done/undone changes.  
+6. Significantly reduces time spent on clarifications regarding reason/author/time of done/undone changes;   
+7. Code summary history may be later used for answering questions regarding the project with the help of Gemini API;  
+8. Code summary history may be used to produce test cases with the help of Gemini API;
 
 #### Future possible improvements/development
 1. Integrate with other Git systems (GitHub is used in MVP, but other Git systems like GitLab, Bitbucket, etc. may be integrated as well);  
@@ -24,6 +26,7 @@ At the current state of implementation Dev Sidekick includes:
 
 ## Tools
 
+- Gemini API (REST), gemini-1.5-pro-latest model
 - Java, [JDK 22](https://sdkman.io/jdks#amzn)
 - Spring Boot 3
 - Gradle (wrapper)
