@@ -134,5 +134,12 @@ If Google Docs api is launched in live mode, credentials.json file and GOOGLE_DO
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://localhost:8080
 
-![Alt text](pictures/home.png? "Home")
+![Alt text](pictures/home.png? "Home")  
 
+7. **Get the code changes summary for selected dates:**
+
+![Alt text](pictures/result.png? "Result")  
+
+8. **Compare code summary with Business Requirements:**
+
+![Alt text](pictures/compare.png? "Compare")  
