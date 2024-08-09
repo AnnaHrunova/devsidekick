@@ -39,7 +39,7 @@ public class GoogleDocsService {
     public String getDocumentContent(String brDocUrl) {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Docs service = new Docs.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName("Google Docs API")
+                .setApplicationName(googleDocConfigProperties.getApplicationName())
                 .build();
         if (googleDocConfigProperties.isLiveMode()) {
             if (isBlank(brDocUrl) ) {
@@ -49,7 +49,7 @@ public class GoogleDocsService {
             Document response = service.documents().get(docId).execute();
             return readStructuralElements(response.getBody().getContent());
         }
-        return utilsService.readFromFile("business_requirements.txt");
+        return utilsService.readFromFile("src/main/resources/doc/business_requirements.txt");
     }
 
     private static String readStructuralElements(List<StructuralElement> elements) {

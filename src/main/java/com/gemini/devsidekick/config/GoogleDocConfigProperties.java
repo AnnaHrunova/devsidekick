@@ -11,4 +11,5 @@ public class GoogleDocConfigProperties {
 
     private boolean liveMode;
     private String brDocUrl;
+    private String applicationName;
 }

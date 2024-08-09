@@ -18,9 +18,8 @@ public class HistoryScheduler {
     private final GeminiService geminiService;
     private final HistoryService historyService;
     private final ProjectConfigProperties projectProperties;
-    private final GithubConfigProperties githubProperties;
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000, fixedDelay = 60000)
     public void scheduleHistoryUpdate() {
         var from = LocalDate.now();
         var to = LocalDate.now();
@@ -35,7 +34,7 @@ public class HistoryScheduler {
 
         var current = from;
         while (current.isBefore(to.plusDays(1))) {
-            boolean historyExists = new File(current.format(DateTimeFormatter.ISO_LOCAL_DATE) + ".txt").exists();
+            boolean historyExists = new File("src/main/resources/doc/history/" + current.format(DateTimeFormatter.ISO_LOCAL_DATE) + ".txt").exists();
             if (!historyExists) {
                 from = current;
                 to = current;

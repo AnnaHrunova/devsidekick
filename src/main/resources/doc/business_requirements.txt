@@ -1,0 +1,80 @@
+Coffee Shop Project: Business Requirements Document - Coffee Orders
+1. Introduction
+This document outlines the specific business requirements related to coffee orders within the context of a software application designed for a coffee shop.
+2. Business Objectives
+Streamline the coffee ordering process for both customers and baristas.
+Minimize order errors and ensure accuracy.
+Provide customers with a seamless and enjoyable ordering experience.
+Enable efficient order fulfillment and reduce customer wait times.
+Track coffee orders and sales data for analysis and decision-making.
+3. User Roles and Responsibilities
+User Role
+Responsibilities
+Customer:
+Browse coffee menu, select drink size and options, place orders, customize orders (e.g., sugar, milk), view order total, provide payment information, receive order confirmation.
+Barista:
+Receive new order notifications, view order details, mark orders as in progress and complete, handle order modifications or cancellations.
+Manager:
+Access order history, generate sales reports based on coffee orders, analyze coffee sales trends, adjust menu and pricing based on data.
+
+4. Functional Requirements
+4.1 Coffee Menu Management
+Maintain Coffee Menu: The system shall allow managers to define and manage the coffee menu, including:
+Coffee Categories: Create and manage categories for different types of coffee (e.g., Espresso, Drip Coffee, Iced Coffee).
+Coffee Items: Add, edit, or remove coffee drinks within each category.
+Drink Sizes: Define available sizes for each coffee drink (e.g., Small, Medium, Large).
+Customization Options: Specify customizable options for each drink (e.g., milk choices, sugar levels, flavor shots).
+Pricing: Set and adjust prices for all coffee sizes and customization options.
+
+
+4.2 Order Placement
+Customer Order Placement: The system shall enable customers to place coffee orders through various channels:
+In-Store Ordering: Customers can place orders directly with the barista through the system's interface.
+Self-Service Kiosk (Optional): Customers can place orders independently using a dedicated touchscreen kiosk.
+Mobile Ordering (Future Consideration): Customers can place orders remotely through a mobile app and pick them up in-store.
+
+
+Order Customization: The system shall allow customers to customize their coffee orders by selecting:
+Drink Size
+Milk Options (e.g., whole milk, skim milk, almond milk, soy milk)
+Sugar Level (e.g., full sugar, half sugar, no sugar)
+Flavor Shots (e.g., vanilla, caramel, hazelnut)
+Additional Options (e.g., extra espresso shot, whipped cream)
+
+
+4.3 Order Fulfillment
+Order Notification: Upon order placement, the system shall:
+Generate an order number and display it to the customer.
+Send an order notification to the barista's order display system.
+
+
+Order Status Tracking: The system shall allow both baristas and customers to track the status of coffee orders:
+Order Received: Order has been successfully placed.
+Order In Progress: Barista has started preparing the order.
+Order Ready: Order is ready for pickup.
+
+
+4.4 Payment Processing
+Payment Options: The system shall support multiple payment methods for coffee orders:
+Cash
+Credit/Debit Cards
+Mobile Payment Systems (e.g., Apple Pay, Google Pay)
+
+
+Receipt Generation: The system shall generate receipts for all coffee orders, either printed or digital.
+5. Non-Functional Requirements
+Usability: The coffee ordering system should be intuitive and easy to use for both customers and baristas.
+Performance: The system should process orders quickly and efficiently, even during peak hours.
+Reliability: The system should be reliable and ensure accurate order processing and fulfillment.
+Security: Payment processing must be secure and compliant with industry standards (PCI DSS).
+6. Data Tracking and Reporting
+The system should track and store data related to coffee orders to generate reports and insights:
+Sales Data: Total coffee sales, sales by coffee type, sales by size and customization options, peak sales hours.
+Order History: Detailed records of all coffee orders, including date, time, order details, and customer information (if available).
+This data analysis will enable the coffee shop to:
+Identify popular coffee drinks and trends.
+Optimize inventory management based on sales patterns.
+Offer targeted promotions and discounts.
+Improve operational efficiency and customer service.
+7. Conclusion
+By implementing a robust and user-friendly coffee ordering system that fulfills these business requirements, the coffee shop can enhance customer satisfaction, streamline operations, and gain valuable insights from sales data to make informed business decisions.

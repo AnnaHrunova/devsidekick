@@ -8,7 +8,8 @@ gemini:
   apiKey: ${GEMINI_API_KEY}
 
 google-docs:
-  liveMode: ${GOOGLE_DOCS_LIVE_MODE:true}
+  liveMode: ${GOOGLE_DOCS_LIVE_MODE:false}
+  applicationName: ${GOOGLE_DOCS_APP:Google Docs API}
   brDocUrl: ${BR_DOC_URL:https://docs.google.com/document/d/1jATNcwr1hq8IOUgqTd2StJc8RPM-MZHNEERZRMGK9og}
 
 project:

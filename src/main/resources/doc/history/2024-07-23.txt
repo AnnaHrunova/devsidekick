@@ -1,0 +1,1 @@
+"- **bf22de8:** Added a missing closing tag in the CoffeeShop class.\n- **d898852:** Introduced a new method to the CoffeeShop class that calculates the total price of an order.\n- **b6c38ad:** Fixed a typo in the display menu method of the CoffeeShop class.\n- **674066a:**  Added a new feature allowing customers to choose the size of their coffee. \n"
