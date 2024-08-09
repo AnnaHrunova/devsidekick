@@ -14,15 +14,14 @@ At the current state of implementation Dev Sidekick includes:
 3. Developer can get enough context to start or pick up a task;  
 4. New team member onboarding process may be simplified;  
 5. Significantly reduces time spent for investigating changes with unclear commit messages;  
-6. Significantly reduces time spent on clarifications regarding reason/author/time of done/undone changes;   
-7. Code summary history may be later used for answering questions regarding the project with the help of Gemini API;  
-8. Code summary history may be used to produce test cases with the help of Gemini API;
+6. Significantly reduces time spent on clarifications regarding reason/author/time of done/undone changes;
 
 #### Future possible improvements/development
 1. Integrate with other Git systems (GitHub is used in MVP, but other Git systems like GitLab, Bitbucket, etc. may be integrated as well);  
 2. Add different options to provide Business Requirements documents (not only local and Google Docs);  
 3. Categorize differences detection between code summary and requirements in order to provide some kind of alerting about occurred conflicts.  
-
+4. Code summary history may be later used for answering questions regarding the project with the help of Gemini API;
+5. Code summary history may be used to produce test cases with the help of Gemini API;
 
 ## Tools
 
