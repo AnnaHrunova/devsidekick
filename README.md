@@ -134,5 +134,5 @@ If Google Docs api is launched in live mode, credentials.json file and GOOGLE_DO
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://localhost:8080
 
-[Home Page](home.png)
+![Alt text](home.png? "Home")
 
